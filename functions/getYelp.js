@@ -1,11 +1,12 @@
 const axios = require('axios');
+const ENV = require('dotenv').config()
 // Events - retrieves post data, headers, ect...
 // Context - retrieves user info ect...
 // Callback - function we run to send a response back to the user
 exports.handler = function (events, context, callback) {
     const API_URL = 'https://api.yelp.com/v3/businesses';
     const YELP_BUSINESS_ID = events.queryStringParameters.id
-    const API_CLIENT_SECRET = 'eMzcAJQAJ-APZTlwRU0SY_FkYEMmFGGsi4SJNeAHmr5dJJbtKbC6vMgKNVXlGPtWDXaCuIjPLwVbkPFUr_h5Vj78HsZDqMB8hxq608EKt6Kerkp02fLXzd8NrJgvXHYx';
+    const API_CLIENT_SECRET = ENV.parsed.API_CLIENT_SECRET;
     const URL = `${API_URL}/${YELP_BUSINESS_ID}`;
     // Send user response
     const send = body => {

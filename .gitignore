@@ -9,3 +9,5 @@ yarn-error.long
 /lambda
 
 .env
+
+.vscode
