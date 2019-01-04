@@ -6,8 +6,6 @@ yarn-error.long
 /public
 
 
-/lambda
-
 .env
 
 .vscode
